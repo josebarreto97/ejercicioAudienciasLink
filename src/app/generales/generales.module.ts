@@ -1,8 +1,11 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SubheaderComponent } from './subheader/subheader.component';
+import { PaginaNoEncontradaComponent } from './pagina-no-encontrada/pagina-no-encontrada.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -10,15 +13,19 @@ import { SubheaderComponent } from './subheader/subheader.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SubheaderComponent
+    SubheaderComponent,
+    PaginaNoEncontradaComponent,
+    SearchComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    SubheaderComponent
+    SubheaderComponent,
+    SearchComponent
   ]
 })
 export class GeneralesModule { }

@@ -1,3 +1,5 @@
+import { MainIdService } from './../main-service/main-id.service';
+import { VisibilidadSearchService } from './../generales/search/visibilidad/visibilidad-search.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,9 +13,14 @@ export class InicioComponent implements OnInit {
     { idBusqueda: 3156, nombre: 'Ministerio de Desarrollo Territorial y Hábitat', id: 519},
     { idBusqueda: 3115, nombre: 'Jefatura de Gabinete de Ministros', id: 437},
   ];
-  constructor() { }
+  constructor(
+    private visibilidadSearchService: VisibilidadSearchService,
+    private MainIdService: MainIdService
+  ) { }
 
   ngOnInit(): void {
+    this.visibilidadSearchService.hacerVisibleBarraDeBusqueda();
+    this.MainIdService.setearSearcherId();
   }
 
 }

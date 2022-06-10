@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subheader',
@@ -8,7 +9,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class SubheaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    router: Router
+  ) { }
 
   ngOnInit(): void {
   }
