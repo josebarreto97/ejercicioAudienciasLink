@@ -6,7 +6,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SubheaderComponent } from './subheader/subheader.component';
 import { PaginaNoEncontradaComponent } from './pagina-no-encontrada/pagina-no-encontrada.component';
 import { SearchComponent } from './search/search.component';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule, //Se agrega para que funciones el routerLink
+    FormsModule,
+    HttpClientModule //Se agrega para poder consumir la Api
   ],
   exports: [
     HeaderComponent,

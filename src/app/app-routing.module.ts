@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: "", component: InicioComponent},
   { path: "acerca-de", component: AcercaDeComponent},
+  { path: 'audiencias', loadChildren: () => import('./audiencias/audiencias.module').then(m => m.AudienciasModule) },
+  { path: 'audiencias', loadChildren: () => import('./audiencias/audiencias.module').then(m => m.AudienciasModule) },
   {path: '**', component: PaginaNoEncontradaComponent}
 ];
 

@@ -4,8 +4,8 @@
   </div>
   <div class="search-form">
      <div class="search-input">
-        <input type="text" id="search-text" placeholder="Buscar por funcionarios, dependencias, participantes de audiencias" value="">
-        <a href="busqueda.html"><button class="green" id="submit-search">BUSCAR</button></a>
+        <input type="text" id="search-text" placeholder="Buscar por funcionarios, dependencias, participantes de audiencias" [(ngModel)]="busqueda" [ngModelOptions]="{standalone: true}">
+        <a (click)="buscar()"><button class="green" id="submit-search">BUSCAR</button></a>
      </div>
      <div class="advance-search-container">
         <input type="checkbox" id="show-advance-search">
@@ -66,7 +66,17 @@
            </div>
         </div>
      </div>
-     <div class="total-count">
+     <div *ngIf="resultado != null" class="total-count">
+      Se encontraron {{resultado?.totales}} resultados
+      para "{{resultado?.busqueda}}" ({{resultado?.horario.datetime | date:'short'}})
+      <div class="results-tabs">
+         <a href="https://audiencias.mininterior.gob.ar/buscar?pen=30">
+            <div class="result-tab selected">Sistema actual ({{resultado?.sistemaActual}})</div>
+         </a>
+         <a href="https://audiencias.mininterior.gob.ar/buscar?pen=30&amp;historico=si">
+            <div class="result-tab ">Sistema anterior ({{resultado?.sistemaAnterior}})</div>
+         </a>
+      </div>
      </div>
   </div>
 </div>
